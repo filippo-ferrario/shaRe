@@ -47,7 +47,7 @@
 #' daytag<-as.Date(Sys.time())
 #' txt<-paste0('R SCRIPT 01-urchin_rocks-data_extraction on ',daytag,'
 #' DATASET DESCRIPTION
-#' Dataset describing the substrate on which Green Sea Urchin (gsu) were found in Bay Sept-Iles in July 2018
+#' Dataset describing the substrate on which Green Sea Urchin (gsu) where found in Bay Sept-Iles in July 2018
 #' Coordinate Reference System
 #' EPSG: ',v1,'
 #' proj4string: ',v1,'
