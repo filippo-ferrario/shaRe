@@ -3,7 +3,7 @@
 # Author     : Filippo Ferrario
 # Date       : 2020-10-14
 # Version    : 0.1
-# Aim        : function to save a data dictionary as csv following the specifices fo the CHONe dataverse 
+# Aim        : function to save a data dictionary following the specifices fo the CHONe dataverse 
 # 				allowing for additional information before the variable table.
 # link	     : https://chone2.ca/app/uploads/2020/05/CHONe-Dataverse-User-Guideline_v3.pdf
 # ===========================================================
@@ -17,11 +17,16 @@
 #' 
 #' @param description character containing the info additional to the data dictionary
 #' @param varTable a data.frame object containing description and metadata of the variables in the related dataset. Typically the dataframe is initated using [initiate_dictionary].
-#' @param path a character specifying the path and the name of the csv file to be saved.
+#' @param path a character specifying the path and the name of the file to be saved.
 #' 
 #' @return 
-#' The dictionary is saved as a csv with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
-
+#' The dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
+#' 
+#' @details
+#' Consider the following format depending on the situation:
+#' - ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description).
+#' - ".csv" If exporting only the dictionary (i.e. varTable)
+#' 
 #' @author Filippo Ferrario, \email{filippo.ferrario.1@@ulaval.ca} 
 #' 
 #' @seealso 

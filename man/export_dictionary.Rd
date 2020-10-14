@@ -11,15 +11,22 @@ export_dictionary(description = NULL, varTable = NULL, path = NULL)
 
 \item{varTable}{a data.frame object containing description and metadata of the variables in the related dataset. Typically the dataframe is initated using \link{initiate_dictionary}.}
 
-\item{path}{a character specifying the path and the name of the csv file to be saved.}
+\item{path}{a character specifying the path and the name of the file to be saved.}
 }
 \value{
-The dictionary is saved as a csv with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
+The dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
 }
 \description{
 Export the data dictionary for a dataset with possibility to add additional information (e.g. dataset description, reference system for geographical coordinates, fiel creation date,... ).
 The data dictionary is formatted based on the CHONe dataverse guideline at \url{https://chone2.ca/app/uploads/2020/05/CHONe-Dataverse-User-Guideline_v3.pdf}.
 Additional information can be added before the data dictionary.
+}
+\details{
+Consider the following format depending on the situation:
+\itemize{
+\item ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description).
+\item ".csv" If exporting only the dictionary (i.e. varTable)
+}
 }
 \examples{
 # initiate a data dictionary
