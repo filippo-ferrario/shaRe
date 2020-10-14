@@ -1,0 +1,9 @@
+Package: shaRe
+Version: 0.1
+Date: 2020-10-14
+Title: Sharing data
+Description: Functions to facilitate documenting data for sharing or archiving.
+Author: Filippo Ferrario <filippo.f3rrario@gmail.com>; Heather Hawk <heatherhawk@gmail.com>
+Maintainer: Filippo Ferrario <filippo.f3rrario@gmail.com>
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
