@@ -6,6 +6,6 @@ Description: Functions to facilitate documenting data for sharing or archiving p
 Author: Filippo Ferrario <filippo.f3rrario@gmail.com>
 Maintainer: Filippo Ferrario <filippo.f3rrario@gmail.com>
 URL: https://github.com/filippo-ferrario/shaRe
-Licence: MIT
+License: MIT
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
