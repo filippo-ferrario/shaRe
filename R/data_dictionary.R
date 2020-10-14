@@ -4,9 +4,6 @@
 # Date       : 2020-10-14
 # Version    : 0.2
 # Aim        : function to create a data dictionary following the specifices fo the CHONe dataverse 
-# 				based on C:\Users\Utilisateur\Documents\Lavoro\LAVAL\CHONE\R_functions\dataverse-data_dictionary-v0.1.R
-# 				changes:
-# 				- add lines before variable table to mke space for, name of the script that genarated the dataset, description of the dataset.
 # link	     : https://chone2.ca/app/uploads/2020/05/CHONe-Dataverse-User-Guideline_v3.pdf
 # ===========================================================
 
