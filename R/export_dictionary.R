@@ -20,12 +20,14 @@
 #' @param path a character specifying the path and the name of the file to be saved.
 #' 
 #' @return 
-#' The dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
+#' Export the data dictionary file as a .txt or .csv (see Details), or formats that can be saved by [utils::write.table]. 
 #' 
 #' @details
 #' Consider the following format depending on the situation:
 #' - ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description).
 #' - ".csv" If exporting only the dictionary (i.e. varTable)
+#' 
+#' The dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
 #' 
 #' @author Filippo Ferrario, \email{filippo.f3rrario@@gmail.com} 
 #' 
@@ -38,8 +40,9 @@
 #' dict<- matrix(nrow=5, ncol=length(dict_names), NA)
 #' dict<-as.data.frame(dict)
 #' names(dict)<-dict_names
+#' # fill in a description of the dataset 
 #' dict[,'field_name']<-letters[1:5]
-#' dict[,'description']<- paste0('this is varable ',LETTERS[1:5])
+#' dict[,'description']<- paste0('this is variable ',LETTERS[1:5])
 #' 
 #' 
 #' # example of additional info
