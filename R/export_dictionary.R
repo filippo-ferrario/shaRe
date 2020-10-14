@@ -27,7 +27,7 @@
 #' - ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description).
 #' - ".csv" If exporting only the dictionary (i.e. varTable)
 #' 
-#' @author Filippo Ferrario, \email{filippo.ferrario.1@@ulaval.ca} 
+#' @author Filippo Ferrario, \email{filippo.f3rrario@@gmail.com} 
 #' 
 #' @seealso 
 #' [initiate_dictionary]

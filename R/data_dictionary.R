@@ -21,7 +21,7 @@
 #' @return 
 #' The data.frame of the dictionary to be completed and saved along with the dataset.
 
-#' @author Filippo Ferrario, \email{filippo.ferrario.1@@ulaval.ca} 
+#' @author Filippo Ferrario, \email{filippo.f3rrario@@gmail.com}
 #' 
 #' @seealso 
 #' [export_dictionary]

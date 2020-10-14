@@ -36,5 +36,5 @@ dict_mydata
 \link{export_dictionary}
 }
 \author{
-Filippo Ferrario, \email{filippo.ferrario.1@ulaval.ca}
+Filippo Ferrario, \email{filippo.f3rrario@gmail.com}
 }
