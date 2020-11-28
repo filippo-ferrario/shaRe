@@ -24,10 +24,10 @@
 #' 
 #' @details
 #' Consider the following format depending on the situation:
-#' - ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description).
-#' - ".csv" If exporting only the dictionary (i.e. varTable)
+#' - ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description). This format is more easily human readable.
+#' - ".csv" If exporting only the dictionary (i.e. varTable). If description is present, varTable is appended after
 #' 
-#' The dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
+#' When format is ".csv" dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=T
 #' 
 #' @author Filippo Ferrario, \email{filippo.f3rrario@@gmail.com} 
 #' 
@@ -74,8 +74,18 @@ export_dictionary<-function(description=NULL, varTable=NULL, path=NULL)
 	if(!is.null(varTable) & !is.data.frame(varTable)) stop('varTable must be a data.frame')
 	if(!is.null(path) & !is.character(path)) stop('path must be a string')	
 	# save additional info
-	write.table(description, file=path, row.names=F, col.names=F, sep=',', dec='.', quote=F)
-	# save data dictionary table
-	write.table(varTable, file=path,append=T, row.names=F, col.names=TRUE, sep=',', dec='.', quote=F)
+	write(description, file=path)
+	# save data dictionary table conditional to file format
+	if (grepl(path, pattern='\\.csv'))
+	write.table(varTable, file=path,append=T, row.names=F, col.names=TRUE, sep=',', dec='.', quote=T)
+	if (grepl(path, pattern='\\.txt')){
+		for (i in 1: nrow(varTable)){
+					for (j in 1:ncol(varTable) ) {
+						write(paste0(names(varTable)[j],': ',varTable[i,j]), file=path,append=T)
+					    }
+					
+					write('\n', file=path,append=T)
+				}
 
+	}
 }

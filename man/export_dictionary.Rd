@@ -24,11 +24,11 @@ Additional information can be added before the data dictionary.
 \details{
 Consider the following format depending on the situation:
 \itemize{
-\item ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description).
-\item ".csv" If exporting only the dictionary (i.e. varTable)
+\item ".txt" If exporting both dictionary (i.e. varTable) and additional information (i.e. description). This format is more easily human readable.
+\item ".csv" If exporting only the dictionary (i.e. varTable). If description is present, varTable is appended after
 }
 
-The dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=F
+When format is ".csv" dictionary is saved by write.table with row.names=F, col.names=TRUE, sep=',', dec='.', quote=T
 }
 \examples{
 # initiate a data dictionary
