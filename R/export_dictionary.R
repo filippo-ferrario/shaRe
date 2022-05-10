@@ -67,6 +67,7 @@
 
 
 
+
 export_dictionary<-function(description=NULL, varTable=NULL, path=NULL)
 {
 	# check parameters
@@ -75,17 +76,19 @@ export_dictionary<-function(description=NULL, varTable=NULL, path=NULL)
 	if(!is.null(path) & !is.character(path)) stop('path must be a string')	
 	# save additional info
 	write(description, file=path)
-	# save data dictionary table conditional to file format
-	if (grepl(path, pattern='\\.csv'))
-	write.table(varTable, file=path,append=T, row.names=F, col.names=TRUE, sep=',', dec='.', quote=T)
-	if (grepl(path, pattern='\\.txt')){
-		for (i in 1: nrow(varTable)){
-					for (j in 1:ncol(varTable) ) {
-						write(paste0(names(varTable)[j],': ',varTable[i,j]), file=path,append=T)
-					    }
-					
-					write('\n', file=path,append=T)
-				}
-
+	if (!is.null(varTable))
+	{# save data dictionary table conditional to file format
+		if (grepl(path, pattern='\\.csv'))
+		write.table(varTable, file=path,append=T, row.names=F, col.names=TRUE, sep=',', dec='.', quote=T)
+		if (grepl(path, pattern='\\.txt')){
+			for (i in 1: nrow(varTable)){
+						for (j in 1:ncol(varTable) ) {
+							write(paste0(names(varTable)[j],': ',varTable[i,j]), file=path,append=T)
+						    }
+						
+						write('\n', file=path,append=T)
+					}
+	
+		}
 	}
 }
