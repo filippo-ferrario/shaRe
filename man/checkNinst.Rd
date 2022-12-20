@@ -4,12 +4,19 @@
 \alias{checkNinst}
 \title{Check the presence of and install packages}
 \usage{
-checkNinst(pk = NULL, repos = "https://cloud.r-project.org/", ...)
+checkNinst(
+  pk = NULL,
+  repos = "https://cloud.r-project.org/",
+  inst = FALSE,
+  ...
+)
 }
 \arguments{
 \item{pk}{a character vector with the names of the packages to check}
 
 \item{repos}{(optional) the URL to a CRAN repository. Default to https://cloud.r-project.org. Get URLs here: https://cran.r-project.org/mirrors.html}
+
+\item{inst}{logical. Should missing packages be installed? Default to FALSE.}
 
 \item{...}{extra arguments to \link{install.packages}}
 }
