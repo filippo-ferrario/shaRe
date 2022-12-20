@@ -7,5 +7,5 @@ Author: Filippo Ferrario <filippo.f3rrario@gmail.com>
 Maintainer: Filippo Ferrario <filippo.f3rrario@gmail.com>
 URL: https://github.com/filippo-ferrario/shaRe
 License: MIT
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)

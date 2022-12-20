@@ -50,4 +50,4 @@ checkNinst<-function(pk=NULL, repos='https://cloud.r-project.org/',...){
 # Bench
 # =================
 
-checkNinst('devtools')
+# checkNinst('devtools')
