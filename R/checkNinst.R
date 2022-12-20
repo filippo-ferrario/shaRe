@@ -15,8 +15,8 @@
 #' 
 #' @param pk a character vector with the names of the packages to check
 #' @param repos (optional) the URL to a CRAN repository. Default to https://cloud.r-project.org. Get URLs here: https://cran.r-project.org/mirrors.html
+#' @param inst logical. Should missing packages be installed? Default to FALSE.
 #' @param ... extra arguments to [install.packages]
-#' 
 #' @details
 #' 
 #' The user is asked if the missing packages should be installed.
@@ -31,13 +31,18 @@
 
 
 #  function to use
-checkNinst<-function(pk=NULL, repos='https://cloud.r-project.org/',...){
+checkNinst<-function(pk=NULL, repos='https://cloud.r-project.org/', inst=FALSE,...){
 	if (!is.character(pk)) stop('pk must be a character vector with the names of the packages to check!')
 	I<-! pk %in% rownames(installed.packages()) 
 	if (length(pk[I])>0){
 		print(paste0('package(s) to install: ', paste0(pk[I], collapse=', ')) )
-		repl<- readline(prompt="install this package(s) from CRAN ? y/n: ")
-		if (! repl %in%c('y','n')) repl<- readline(prompt="install this package(s) from CRAN ? y/ne: ")
+		# install or ask?
+		if (inst) { 
+			repl<-'y'
+			} else{ 
+					repl<- readline(prompt="install this package(s) from CRAN ? y/n: ")
+					if (! repl %in%c('y','n')) repl<- readline(prompt="install this package(s) from CRAN ? y/ne: ")
+				}
 		if (repl=='y'){
 				if (!is.character(repos)) stop('specify a CRAN repository. get URLs here: https://cran.r-project.org/mirrors.html')
 				# install needed packages
