@@ -4,7 +4,13 @@
 \alias{export_dictionary}
 \title{Export data dictionary}
 \usage{
-export_dictionary(description = NULL, varTable = NULL, path = NULL)
+export_dictionary(
+  description = NULL,
+  varTable = NULL,
+  path = NULL,
+  formatTable = "table",
+  overwrite = TRUE
+)
 }
 \arguments{
 \item{description}{character containing the info additional to the data dictionary}
@@ -12,6 +18,10 @@ export_dictionary(description = NULL, varTable = NULL, path = NULL)
 \item{varTable}{a data.frame object containing description and metadata of the variables in the related dataset. Typically the dataframe is initated using \link{initiate_dictionary}.}
 
 \item{path}{a character specifying the path and the name of the file to be saved.}
+
+\item{formatTable}{character. Only considered for .txt output. One of the following two options: 'long', 'table'(DEFAULT). 'long' format will report one variable and its metadata at the time, one after the other. 'table' format will paste metadata as a formatted table.}
+
+\item{overwrite}{logical. should overwrite an existing file with the same name? DEFAULT to TRUE. If FALSE than the file is appended.}
 }
 \value{
 Export the data dictionary file as a .txt or .csv (see Details), or formats that can be saved by \link[utils:write.table]{utils::write.table}.
@@ -53,7 +63,12 @@ proj4string: ',v1,'
 '
 )
 
-file_name<-tempfile()
+file_name<-paste0(tempfile(),'.txt')
+export_dictionary(description=txt,varTable=dict, path=file_name)
+# open exported distionary in the text editor
+edit(file=file_name)
+
+file_name<-paste0(tempfile(),'.csv')
 export_dictionary(description=txt,varTable=dict, path=file_name)
 # open exported distionary in the text editor
 edit(file=file_name)
